@@ -71,5 +71,27 @@ namespace Lab_3
             // create my deck of cards
             this._create();
         }
+
+        // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        /**
+         * <summary>
+         * This method displays a List of Card objects to the Console
+         * </summary>
+         * 
+         * @method Display
+         * @returns {void}
+         */
+        public void Display()
+        {
+            Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++++");
+            Console.WriteLine("+ Current Deck                              +");
+            Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++++");
+            foreach (Card card in this)
+            {
+                Console.WriteLine("{0} of {1}", card.Face, card.Suit);
+            }
+            Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++++");
+            Console.WriteLine();
+        }
     }
 }
