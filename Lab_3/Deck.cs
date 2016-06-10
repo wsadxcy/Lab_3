@@ -93,5 +93,31 @@ namespace Lab_3
             Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++++");
             Console.WriteLine();
         }
+
+        /**
+         * <summary>
+         * This method randomly shuffles a List of Card objects
+         * </summary>
+         * 
+         * @method Shuffle
+         * @returns {void}
+         */
+        public void Shuffle()
+        {
+            // creates a pseudo-random number sequence and stores it in random
+            Random random = new Random();
+            // record the number of cards in the deck List
+            int cardCount = this.Count;
+
+            // iterate through the list of cards 
+            for (int currentCard = 0; currentCard < cardCount; currentCard++)
+            {
+                Card tempCard = this[currentCard]; // copy current card to temp location
+                int randomCard = random.Next(0, cardCount); // get a random card index
+                this[currentCard] = this[randomCard]; // copy value from randomCard to currentCard
+                this[randomCard] = tempCard; // copy current card to random card
+            }
+
+        }
     }
 }
